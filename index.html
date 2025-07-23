@@ -62,6 +62,20 @@
             color: #1e4c78;
             font-weight: bold;
         }
+        .button-like {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #c8bd23;
+            color: white !important;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            border: 1px solid #a71d2a;
+        }
+        .button-like:hover {
+            background-color: #a71d2a;
+            text-decoration: none;
+        }
         a {
             color: #1e4c78;
             text-decoration: none;
@@ -110,6 +124,10 @@
         <div class="language-toggle">
             <button class="language-btn" onclick="toggleLanguage('arabic')">العربية</button>
             <button class="language-btn active" onclick="toggleLanguage('english')">English</button>
+        </div>
+        
+        <div style="text-align: center; margin-bottom: 20px;">
+            <a href="#delete-account-en" id="delete-link" class="button-like">Account Deletion Instructions</a>
         </div>
         
         <!-- Arabic Version -->
@@ -213,8 +231,46 @@
                 </p>
             </div>
 
+            <div id="delete-account-ar" class="section">
+                <h2>10. حذف الحساب</h2>
+                <p>
+                    يمكنك حذف حسابك وجميع بياناتك المرتبطة به في أي وقت. لحذف حسابك، يمكنك اتباع إحدى الطريقتين التاليتين:
+                </p>
+                
+                <h3>الطريقة الأولى: من شاشة المسابقة</h3>
+                <ol>
+                    <li>قم بتسجيل الدخول إلى التطبيق</li>
+                    <li>انتقل إلى شاشة "المسابقة"</li>
+                    <li>انقر على أيقونة الحساب في الزاوية العلوية اليمنى</li>
+                    <li>اختر "حذف الحساب" من القائمة المنسدلة</li>
+                    <li>قم بتأكيد رغبتك في حذف الحساب</li>
+                </ol>
+                
+                <h3>الطريقة الثانية: من القائمة الجانبية</h3>
+                <ol>
+                    <li>قم بتسجيل الدخول إلى التطبيق</li>
+                    <li>اسحب من اليمين إلى اليسار لفتح القائمة الجانبية</li>
+                    <li>انقر على زر "حذف الحساب" الموجود في أسفل القائمة</li>
+                    <li>قم بتأكيد رغبتك في حذف الحساب</li>
+                </ol>
+                
+                <p>
+                    بمجرد حذف حسابك، سيتم حذف جميع بياناتك الشخصية بشكل نهائي من قواعد البيانات الخاصة بنا، بما في ذلك:
+                </p>
+                <ul>
+                    <li>اسم المستخدم والمعلومات الشخصية</li>
+                    <li>النقاط والشارات والإنجازات في المسابقات</li>
+                    <li>عضويتك في مجموعات الذكر</li>
+                    <li>المجموعات التي قمت بإنشائها</li>
+                    <li>جميع الرسائل والمشاركات في المجموعات</li>
+                </ul>
+                <p>
+                    <strong>تنبيه هام:</strong> لا يمكن التراجع عن هذا الإجراء، وستفقد جميع بياناتك بشكل نهائي.
+                </p>
+            </div>
+
             <div class="section">
-                <h2>10. اتصل بنا</h2>
+                <h2>11. اتصل بنا</h2>
                 <p>
                     إذا كان لديك أي أسئلة حول سياسة الخصوصية هذه، يمكنك التواصل معنا عبر البريد الإلكتروني:
                     <a href="mailto:tilllawiy@gmail.com">tilllawiy@gmail.com</a>
@@ -323,8 +379,46 @@
                 </p>
             </div>
 
+            <div id="delete-account-en" class="section">
+                <h2>10. Account Deletion</h2>
+                <p>
+                    You can delete your account and all data associated with it at any time. To delete your account, you can follow one of these two methods:
+                </p>
+                
+                <h3>Method 1: From the Competition Screen</h3>
+                <ol>
+                    <li>Log in to the app</li>
+                    <li>Navigate to the "Competition" screen</li>
+                    <li>Click on the account icon in the top right corner</li>
+                    <li>Select "Delete Account" from the dropdown menu</li>
+                    <li>Confirm your intent to delete the account</li>
+                </ol>
+                
+                <h3>Method 2: From the Side Menu</h3>
+                <ol>
+                    <li>Log in to the app</li>
+                    <li>Swipe from right to left to open the side menu</li>
+                    <li>Click on the "Delete Account" button at the bottom of the menu</li>
+                    <li>Confirm your intent to delete the account</li>
+                </ol>
+                
+                <p>
+                    Upon deleting your account, all your personal data will be permanently deleted from our databases, including:
+                </p>
+                <ul>
+                    <li>Username and personal information</li>
+                    <li>Points, badges, and achievements in competitions</li>
+                    <li>Your membership in Dhikr groups</li>
+                    <li>Groups you have created</li>
+                    <li>All messages and posts in groups</li>
+                </ul>
+                <p>
+                    <strong>Important note:</strong> This action cannot be undone, and you will permanently lose all your data.
+                </p>
+            </div>
+
             <div class="section">
-                <h2>10. Contact Us</h2>
+                <h2>11. Contact Us</h2>
                 <p>
                     If you have any questions about this Privacy Policy, you can contact us via email:
                     <a href="mailto:tilllawiy@gmail.com">tilllawiy@gmail.com</a>
@@ -339,16 +433,21 @@
     
     <script>
         function toggleLanguage(lang) {
+            var deleteLink = document.getElementById('delete-link');
             if (lang === 'arabic') {
                 document.getElementById('arabic').style.display = 'block';
                 document.getElementById('english').style.display = 'none';
                 document.querySelectorAll('.language-btn')[0].classList.add('active');
                 document.querySelectorAll('.language-btn')[1].classList.remove('active');
+                deleteLink.href = '#delete-account-ar';
+                deleteLink.textContent = 'تعليمات حذف الحساب';
             } else {
                 document.getElementById('arabic').style.display = 'none';
                 document.getElementById('english').style.display = 'block';
                 document.querySelectorAll('.language-btn')[0].classList.remove('active');
                 document.querySelectorAll('.language-btn')[1].classList.add('active');
+                deleteLink.href = '#delete-account-en';
+                deleteLink.textContent = 'Account Deletion Instructions';
             }
         }
     </script>
