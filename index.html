@@ -84,11 +84,12 @@
         .arabic {
             direction: rtl;
             text-align: right;
+            display: none;
         }
         .english {
             direction: ltr;
             text-align: left;
-            display: none;
+            display: block;
         }
         .footer {
             text-align: center;
@@ -107,8 +108,8 @@
         </div>
         
         <div class="language-toggle">
-            <button class="language-btn active" onclick="toggleLanguage('arabic')">العربية</button>
-            <button class="language-btn" onclick="toggleLanguage('english')">English</button>
+            <button class="language-btn" onclick="toggleLanguage('arabic')">العربية</button>
+            <button class="language-btn active" onclick="toggleLanguage('english')">English</button>
         </div>
         
         <!-- Arabic Version -->
